@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIRNA - Project Details</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-left">
+          <a href="index.html" class="logo-text">see.feel.do</a>
+        </div>
+
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" class="active-on-home"
+              ><i class="fas fa-home"></i> Home</a
+            >
+          </li>
+          <li>
+            <a href="portfolio.html" class="active-on-portfolio"
+              ><i class="fas fa-th-large"></i> Portfolio</a
+            >
+          </li>
+          <li>
+            <a href="instagram.html" class="active-on-instagram"
+              ><i class="fab fa-instagram"></i> Instagram</a
+            >
+          </li>
+          <li>
+            <a href="about.html" class="active-on-about"
+              ><i class="fas fa-info-circle"></i> About</a
+            >
+          </li>
+          <li>
+            <a href="contact.html" class="active-on-contact"
+              ><i class="fas fa-envelope"></i> Contact</a
+            >
+          </li>
+        </ul>
+
+        <div class="nav-right-desktop">
+          <a
+            href="https://www.instagram.com/see.feel.do?igsh=MWs4MG1lMnY0bWZtMw%3D%3D&utm_source=qr"
+            target="_blank"
+            class="instagram-link"
+          >
+            <i class="fab fa-instagram"></i> @SFD
+          </a>
+        </div>
+
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+      </nav>
+    </header>
+
+    <main class="project-details-page">
+      <div class="page-content">
+        <a href="portfolio.html" class="back-to-portfolio"
+          ><i class="fas fa-arrow-left"></i> Back to Portfolio</a
+        >
+
+        <h2>SIRNA: Kampanye Visual Berdampak Sosial</h2>
+        <img
+          src="THUM SIRNA.jpg"
+          alt="SIRNA Project Main Image"
+          class="project-main-image"
+        />
+
+        <div class="project-overview">
+          <h3>Project Overview</h3>
+          <p>
+            SIRNA adalah kampanye visual yang dirancang untuk meningkatkan
+            kesadaran dan mendorong aksi terhadap isu sosial penting. Melalui
+            serangkaian desain grafis, ilustrasi, dan materi promosi, kami
+            bertujuan untuk menyampaikan pesan yang kuat dan menggugah emosi,
+            sehingga mendorong audiens untuk terlibat dan membuat perubahan
+            positif. Proyek ini menyoroti kekuatan visual dalam advokasi sosial.
+          </p>
+        </div>
+
+        <div class="project-sections">
+          <div class="project-section-item">
+            <h3>Strategi Komunikasi</h3>
+            <p>
+              Kampanye ini mengadopsi strategi komunikasi visual yang berani dan
+              langsung. Kami menggunakan palet warna yang kontras, tipografi
+              yang kuat, dan citra yang relevan untuk menarik perhatian dan
+              menyampaikan pesan dengan jelas. Distribusi konten dilakukan
+              melalui media sosial, poster digital, dan kemitraan dengan
+              organisasi terkait, memastikan jangkauan yang luas.
+            </p>
+            <img
+              src="https://via.placeholder.com/800x450?text=Communication+Strategy+Image"
+              alt="Communication Strategy"
+            />
+          </div>
+
+          <div class="project-section-item">
+            <h3>Respon dan Pencapaian</h3>
+            <p>
+              Kampanye SIRNA telah menerima respon positif dari publik dan
+              media, berhasil meningkatkan diskusi tentang isu yang diangkat.
+              Dengan desain yang mudah diingat dan pesan yang resonan, kampanye
+              ini telah berhasil memobilisasi dukungan dan mendorong tindakan
+              nyata dari berbagai lapisan masyarakat. Ini adalah bukti komitmen
+              SFD untuk menciptakan desain yang tidak hanya estetis tetapi juga
+              berdampak nyata.
+            </p>
+            <img
+              src="https://via.placeholder.com/800x450?text=Impact+and+Achievements+Image"
+              alt="Impact and Achievements"
+            />
+          </div>
+        </div>
+
+        <p class="project-cta">
+          Punya ide kampanye yang ingin Anda wujudkan? Kunjungi halaman
+          <a href="contact.html">Hubungi Kami</a>!
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 see.feel.do. All rights reserved.</p>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // --- 1. JavaScript untuk Toggle Menu Navbar ---
+        const navLinks = document.querySelector(".nav-links");
+        const menuToggle = document.querySelector(".menu-toggle");
+
+        if (menuToggle && navLinks) {
+          menuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+          });
+
+          // Opsional: Tutup menu saat link di klik (di mobile)
+          navLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", function () {
+              if (window.innerWidth <= 768) {
+                // Hanya untuk mobile
+                navLinks.classList.remove("active");
+              }
+            });
+          });
+        }
+
+        // --- 2. JavaScript untuk Highlight Menu Aktif ---
+        const currentPath = window.location.pathname;
+        const navItems = document.querySelectorAll(".nav-links li a");
+
+        navItems.forEach((item) => {
+          // Hapus semua class 'active' terlebih dahulu untuk reset
+          item.classList.remove("active");
+
+          // Cek dan tambahkan class 'active' berdasarkan URL
+          // Perhatikan bahwa currentPath mungkin memiliki leading slash atau nama file
+          if (
+            currentPath.includes("index.html") ||
+            currentPath === "/" ||
+            currentPath === "/sfd-seefeeldo/"
+          ) {
+            // Menangani index.html dan root domain
+            if (item.classList.contains("active-on-home")) {
+              item.classList.add("active");
+            }
+          } else if (
+            currentPath.includes("portfolio.html") &&
+            item.classList.contains("active-on-portfolio")
+          ) {
+            item.classList.add("active");
+          } else if (
+            currentPath.includes("instagram.html") &&
+            item.classList.contains("active-on-instagram")
+          ) {
+            item.classList.add("active");
+          } else if (
+            currentPath.includes("about.html") &&
+            item.classList.contains("active-on-about")
+          ) {
+            item.classList.add("active");
+          } else if (
+            currentPath.includes("contact.html") &&
+            item.classList.contains("active-on-contact")
+          ) {
+            item.classList.add("active");
+          }
+        });
+
+        // --- 3. JavaScript untuk Transisi Fade-in Halaman (Lebih Konsisten) ---
+        // Pastikan body memiliki class 'fade-in' setelah DOM selesai dimuat
+        // Menggunakan setTimeout 0ms untuk memastikan browser sudah merender opacity: 0
+        setTimeout(() => {
+          document.body.classList.add("fade-in");
+        }, 0);
+
+        // --- Opsional: Transisi Fade-out saat LEAVING a page (Lebih Kompleks) ---
+        // Baca komentar di bawah ini sebelum mengaktifkan bagian ini!
+        /*
+        const internalLinks = document.querySelectorAll('a[href^="index.html"], a[href^="portfolio.html"], a[href^="instagram.html"], a[href^="about.html"], a[href^="contact.html"]'); // Pilih semua link internal Anda
+
+        internalLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const targetPage = this.getAttribute('href');
+                const isExternal = this.getAttribute('target') === '_blank';
+
+                // Hanya jalankan transisi untuk link internal yang tidak dibuka di tab baru
+                if (!isExternal && !e.ctrlKey && !e.metaKey) {
+                    e.preventDefault(); // Mencegah navigasi default
+
+                    document.body.classList.remove('fade-in'); // Mulai fade-out
+                    document.body.style.opacity = '0'; // Pastikan opacity diset ke 0 untuk fade-out
+
+                    // Dapatkan durasi transisi dari CSS
+                    const transitionDuration = parseFloat(getComputedStyle(document.body).transitionDuration) * 1000;
+
+                    // Tunggu sampai transisi fade-out selesai sebelum navigasi
+                    setTimeout(() => {
+                        window.location.href = targetPage; // Navigasi ke halaman berikutnya
+                    }, transitionDuration + 50); // Tambahkan sedikit jeda keamanan
+                }
+            });
+        });
+        */
+      });
+    </script>
+  </body>
+</html>
